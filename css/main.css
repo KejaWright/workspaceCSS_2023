@@ -1,0 +1,272 @@
+/*style file created by me, keja
+00: CSS Varaibles
+01: Color
+02: Typography
+03: layout
+*/
+
+/*00: Css Variables*/
+:root{
+    --page-color: hsla(0, 70%, 65%, 0.9);
+    --body-color: hsla(50, 70%, 60%, .9);
+    --sidebar-color: hsla(46, 100%, 63%, 0.9);
+    --tab-color: hsla(10, 96%, 45%, 1);
+    --footbar-color: hsla(30,100%,50%,1);
+    --footbar-height: 10vh;
+    --page-position: 85%;
+    --page-width: 30%;
+    --tab-gap: 2vw;
+    --tab-width: 12vw;
+    --tab-height: 5vw;
+}
+
+
+
+/*01: Color*/
+html{
+    background-color: hsla(33, 76%, 65%, 0.5);
+    color: hsla(100%, 60%, 45%, .9);
+    padding: 1%;
+}
+body{
+    background-color: var(--body-color);
+}
+aside.sidebar{
+    background-color: var(--sidebar-color);
+    
+}
+#zen-intro{
+    background-color: var(--page-color);
+}
+#zen-supporting{
+    background-color: var(--page-color);
+    
+}
+footer{
+    background-color:var(--page-color);
+}
+h2{
+    background-image:linear-gradient(red, orange, white);
+    animation: 4s infinite running ease-in-out changecolor;
+}
+
+/*02: typograph*/
+@font-face{
+    font-family: 'mine';
+    src: url(../fonts/chunkfive.woff);
+}
+header h1{
+    font-family: 'mine',sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 1em;
+}
+h3{
+    font-family:'pixelify sans', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
+    font-size: 1em;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*03: layout*/
+
+div.explanation, div.requirements, div.benefits, div.participation{
+    position: fixed;
+    top: 90vh;
+    width: 30%;
+    height: 70vw;
+    padding: 2%;
+    margin: 10px;
+    border: 1px dashed red;
+    background-image: url(../img/newspaper3.jpg);
+    border-radius: 10px;
+    transition: all 4s ease-in-out;
+}
+header{
+    background-color: bisque;
+    position: fixed;
+    left: 50vw;
+    width: 30vw;
+    transform: rotate(10deg);
+    z-index: 8;
+}
+aside.sidebar{
+    position: fixed;
+    top:0;
+    right:5px;
+    width:20%;
+    text-align: left;
+    z-index: 1;
+
+}
+div.extra2{ /*footer*/
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footbar-height);
+    background-color: var(--footbar-color);
+    z-index: 2;
+
+}
+div.explanation{
+    left: 0%;
+    z-index: 1;
+}
+div.explanation h3{
+    margin-top: -70px;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
+    border-top-left-radius: 40px;
+}
+div.requirements{
+    left: 15vw;
+}
+div.requirements h3{
+    margin-top: -70px;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
+    border-top-left-radius: 40px;
+}
+div.benefits{
+    left:30vw;
+}
+div.benefits h3{
+    margin-top: -70px;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
+    border-top-left-radius: 40px;
+}
+div.participation{
+    left:45vw;
+}
+div.participation h3{
+    margin-top: -70px;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
+    border-top-left-radius: 40px;
+}
+
+section.intro{
+    position: fixed;
+    bottom: 10%;
+    left: 30%;
+    width: 40%;
+    height: 80%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+    transform: rotate(-10deg) translate(-90px);
+}
+footer{
+    position: fixed;
+    top:97vh;
+    z-index: 4;
+    left:45%;
+}
+
+
+
+/*04: other decoration*/
+div.explanation:active{
+    top:15vh;
+}
+div.requirements:active{
+    top:15vh;
+}
+div.benefits:active{
+    top:15vh;
+}
+div.participation:active{
+    top:15vh;
+}
+a:hover{
+    font-size: 1.2em;
+    text-indent: -100px;
+}
+p::first-letter{
+    font-size: 2em;
+    font-style: italic;
+}
+p:nth-child(2n){
+    background-color: hsla(10, 96%, 45%, 0.7) ;
+}
+p:nth-child(2n+1){
+    background-color: hsla(0, 70%, 65%, 0.9);
+}
+aside.sidebar{
+    clip-path: polygon(0 0, 0 70%, 50% 100%, 100% 70%, 100% 0);
+    height: 60%;
+    font-size: .60em;
+    text-decoration: none;
+}
+aside.sidebar ul li{
+    list-style: none;
+}
+
+/*animation*/
+footer{
+    animation: 10s ease-in-out 3s alternate infinite moveback;
+}
+@keyframes moveback{
+    from{transform: translate(-500px,0);}
+    30%{transform: translate(-300px,0)}
+    50%{transform: translate(0px,0);}
+    90%{transform: translate(100px,0);}
+}
+@keyframes changecolor{
+    from{background-image: linear-gradient(pink, red, yellow);}
+    50%{background-image: linear-gradient(yellow, pink, orange);}
+}
+
+
+/*css grid testing*/
+div.rapper{
+    background-color:  hsla(200,50%,70%,0.3);
+}
+.rapper {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100px  repeat(2, 1fr) 100px;
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    display: none;
+}
+.one{
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
+.two{
+    grid-column: 1/ 4;
+    grid-row: 1/2;
+}
+.three{
+    grid-column:1/1;
+    grid-row: 2/4;
+}
+.four{
+    grid-column: 4/4;
+    grid-row: 1/3;
+}
+.five{
+    grid-column:1/4;
+    grid-row:4/4;
+}
+.six{
+    grid-column: 3/5;
+    grid-row: 3/span 2;
+}
