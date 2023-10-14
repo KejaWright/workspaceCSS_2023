@@ -9,17 +9,16 @@
 :root{
     --page-color: hsla(0, 70%, 65%, 0.9);
     --body-color: hsla(50, 70%, 60%, .9);
-    --sidebar-color: hsla(46, 100%, 63%, 0.9);
+    --sidebar-color: hsla(46, 100%, 63%, 1);
     --tab-color: hsla(10, 96%, 45%, 1);
     --footbar-color: hsla(30,100%,50%,1);
     --footbar-height: 10vh;
     --page-position: 85%;
     --page-width: 30%;
     --tab-gap: 2vw;
-    --tab-width: 12vw;
+    --tab-width: 15vw;
     --tab-height: 5vw;
 }
-
 
 
 /*01: Color*/
@@ -33,14 +32,12 @@ body{
 }
 aside.sidebar{
     background-color: var(--sidebar-color);
-    
 }
 #zen-intro{
     background-color: var(--page-color);
 }
 #zen-supporting{
     background-color: var(--page-color);
-    
 }
 footer{
     background-color:var(--page-color);
@@ -65,7 +62,7 @@ header h1{
 h3{
     font-family:'pixelify sans', sans-serif;
     src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
-    font-size: 1em;
+    font-size: .9em;
     text-align: center;
 }
 a{
@@ -73,14 +70,7 @@ a{
     text-transform: uppercase;
 }
 
-
-
-
-
-
-
 /*03: layout*/
-
 div.explanation, div.requirements, div.benefits, div.participation{
     position: fixed;
     top: 90vh;
@@ -93,22 +83,37 @@ div.explanation, div.requirements, div.benefits, div.participation{
     border-radius: 10px;
     transition: all 4s ease-in-out;
 }
-header{
-    background-color: bisque;
-    position: fixed;
-    left: 50vw;
-    width: 30vw;
-    transform: rotate(10deg);
-    z-index: 8;
+div.explanation{
+    left: 0%;
+    z-index: 5;
+}
+div.requirements{
+    left: 15vw;
+    z-index: 4;
+}
+div.benefits{
+    left:30vw;
+    z-index: 3;
+}
+
+div.participation{
+    left:45vw;
+    z-index: 2;
 }
 aside.sidebar{
     position: fixed;
-    top:0;
+    top:15vh;
     right:5px;
     width:20%;
-    text-align: left;
-    z-index: 1;
-
+}
+div.page-wrapper header{
+    background-color: rgb(201, 0, 100);
+    position: absolute;
+    z-index: 2;
+    top:4vh;
+    left: 60vw;
+    width: 30vw;
+    transform: rotate(12deg);
 }
 div.extra2{ /*footer*/
     position: fixed;
@@ -117,69 +122,46 @@ div.extra2{ /*footer*/
     width: 100%;
     height: var(--footbar-height);
     background-color: var(--footbar-color);
-    z-index: 2;
-
+    z-index: 6;
 }
-div.explanation{
-    left: 0%;
-    z-index: 1;
-}
-div.explanation h3{
+div.explanation h3, div.participation h3, div.requirements h3, div.benefits h3{
     margin-top: -70px;
     width: var(--tab-width);
     height: var(--tab-height);
     background-color: var(--tab-color);
     border-top-left-radius: 40px;
 }
-div.requirements{
-    left: 15vw;
-}
-div.requirements h3{
-    margin-top: -70px;
-    width: var(--tab-width);
-    height: var(--tab-height);
-    background-color: var(--tab-color);
-    border-top-left-radius: 40px;
-}
-div.benefits{
-    left:30vw;
-}
-div.benefits h3{
-    margin-top: -70px;
-    width: var(--tab-width);
-    height: var(--tab-height);
-    background-color: var(--tab-color);
-    border-top-left-radius: 40px;
-}
-div.participation{
-    left:45vw;
-}
-div.participation h3{
-    margin-top: -70px;
-    width: var(--tab-width);
-    height: var(--tab-height);
-    background-color: var(--tab-color);
-    border-top-left-radius: 40px;
-}
-
 section.intro{
     position: fixed;
-    bottom: 10%;
-    left: 30%;
+    bottom: 5%;
+    left: 20%;
     width: 40%;
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper3.jpg);
-    transform: rotate(-10deg) translate(-90px);
+    transform: rotate(-10deg);
+    z-index: 2;
+}
+div.extra1{/*the other paper*/
+    z-index: -1;
+    position: fixed;
+    left: 10%;
+    bottom: 10%;
+    width: 40%;
+    height: 80%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+    transform: rotate(10deg) translate(100px, 0);
 }
 footer{
     position: fixed;
     top:97vh;
-    z-index: 4;
     left:45%;
+    z-index: 5;
 }
-
-
+div.rapper{
+    display: none;
+}
 
 /*04: other decoration*/
 div.explanation:active{
@@ -217,6 +199,9 @@ aside.sidebar{
 aside.sidebar ul li{
     list-style: none;
 }
+aside.sidebar h3{
+    display: none;
+}
 
 /*animation*/
 footer{
@@ -232,9 +217,13 @@ footer{
     from{background-image: linear-gradient(pink, red, yellow);}
     50%{background-image: linear-gradient(yellow, pink, orange);}
 }
+section.intro h3 ~p{
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
 
 
-/*css grid testing*/
+/*css grid testing
 div.rapper{
     background-color:  hsla(200,50%,70%,0.3);
 }
@@ -270,3 +259,4 @@ div.rapper{
     grid-column: 3/5;
     grid-row: 3/span 2;
 }
+*/
